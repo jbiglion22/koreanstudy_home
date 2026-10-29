@@ -5,63 +5,349 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Korean Study — Learn Korean from Hangul to everyday conversation</title>
 <meta name="description" content="Learn Hangul with stroke-order tracing, build everyday vocabulary, and practice real conversations. Explanations in English, Vietnamese, or easy Korean.">
-<meta property="og:title" content="Korean Study — Learn Korean from Hangul to everyday conversation">
-<meta property="og:description" content="Learn Hangul with stroke-order tracing, build everyday vocabulary, and practice real conversations. Explanations in English, Vietnamese, or easy Korean.">
-<meta property="og:image" content="assets/icon-512.png">
-<link rel="alternate" hreflang="en" href="index.html">
-<link rel="alternate" hreflang="ko" href="ko/index.html">
-<link rel="alternate" hreflang="vi" href="vi/index.html">
-<link rel="alternate" hreflang="x-default" href="index.html">
-<link rel="icon" href="assets/icon-192.png">
-<link rel="apple-touch-icon" href="assets/icon-192.png">
+<meta name="theme-color" content="#2347C5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<style>
+:root{--bg:#F5F6FA;--surface:#FFFFFF;--text:#16192C;--muted:#5B6178;--primary:#2347C5;--on-primary:#FFFFFF;--soft:#E8EDFB;
+--outline:#E4E7F0;--hero:#2347C5;--on-hero:#FFFFFF;--on-hero-muted:#D3DCF7;--streak:#E8523F;--success:#1E8E5A;--star:#F2B233;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1220;--surface:#181B2E;--text:#ECEEF7;--muted:#A3A9C2;--primary:#8CA6FF;--on-primary:#0B1230;
+--soft:#222C52;--outline:#2A2F47;--hero:#1B2A6B;--on-hero:#FFFFFF;--on-hero-muted:#C7D2F5;--streak:#FF7A66;--success:#4FD08A;color-scheme:dark}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Be Vietnam Pro","Noto Sans KR",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+html:lang(ko) body{font-family:"Noto Sans KR","Be Vietnam Pro",system-ui,sans-serif;word-break:keep-all}
+a{color:var(--primary)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--outline)}
+.bar{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--text);text-decoration:none}
+.logo{width:36px;height:36px;border-radius:10px;background:var(--hero);color:#fff;display:grid;place-items:center;font-family:"Noto Sans KR",sans-serif;font-weight:700;font-size:19px}
+nav.links{display:flex;gap:20px;margin-left:auto}nav.links a{color:var(--muted);text-decoration:none;font-size:15px}nav.links a:hover{color:var(--text)}
+.lang{display:flex;gap:4px;border:1px solid var(--outline);border-radius:999px;padding:3px;background:var(--surface)}
+.lang button{font:inherit;font-size:13px;padding:4px 10px;border:0;border-radius:999px;background:none;color:var(--muted);cursor:pointer;white-space:nowrap}
+.lang button[aria-pressed="true"]{background:var(--primary);color:var(--on-primary)}
+.hero{background:var(--hero);color:var(--on-hero);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;padding-top:64px}
+.hero .copy{padding-bottom:64px}
+.eyebrow{display:inline-block;font-size:14px;font-weight:600;background:rgba(255,255,255,.14);padding:5px 12px;border-radius:999px;color:var(--on-hero-muted)}
+.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.15;margin:18px 0 16px;letter-spacing:-.02em}
+.hero p.sub{font-size:18px;color:var(--on-hero-muted);margin:0 0 28px;max-width:34em}
+.badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);color:#fff;border-radius:14px;padding:12px 20px;font-weight:600;border:1px solid rgba(255,255,255,.25)}
+.badge .tri{width:0;height:0;border-left:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent}
+.note{margin-top:14px;font-size:14px;color:var(--on-hero-muted)}
+.phone{width:min(300px,86%);margin:0 auto;border-radius:36px 36px 0 0;border:10px solid #0B0F1F;border-bottom:0;background:#F5F6FA;color:#16192C;padding:22px 14px 18px;box-shadow:0 30px 60px rgba(0,0,0,.35);font-size:12px;line-height:1.4;text-align:left}
+.phone .hi{font-family:"Noto Sans KR",sans-serif;font-weight:700;font-size:20px}
+.phone .hello{color:#5B6178;margin:2px 0 12px}
+.m-hero{background:#2347C5;color:#fff;border-radius:16px;padding:14px}
+.m-hero .u{color:#D3DCF7;font-weight:600}
+.m-hero .glyphs{font-family:"Noto Sans KR",sans-serif;font-size:30px;font-weight:700;letter-spacing:.3em;margin:6px 0 8px}
+.m-track{height:6px;border-radius:3px;background:rgba(255,255,255,.25)}.m-track i{display:block;height:100%;width:35%;border-radius:3px;background:#fff}
+.m-btn{margin-top:12px;background:#fff;color:#2347C5;border-radius:10px;text-align:center;padding:8px;font-weight:700}
+.m-card{background:#fff;border:1px solid #E4E7F0;border-radius:14px;padding:12px;margin-top:10px}
+.m-card b{display:block}
+.m-goal{display:flex;justify-content:space-between;font-weight:700}.m-goal span{color:#5B6178;font-weight:400}
+.m-bar{height:6px;border-radius:3px;background:#E8EDFB;margin-top:8px}.m-bar i{display:block;height:100%;width:60%;border-radius:3px;background:#2347C5}
+.m-ko{font-family:"Noto Sans KR",sans-serif;font-size:16px;font-weight:700;margin:4px 0 0}
+.m-sub{color:#5B6178}
+section{padding:80px 0}
+h2{font-size:clamp(26px,3.4vw,36px);line-height:1.25;margin:0 0 36px;letter-spacing:-.01em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--outline);border-radius:20px;padding:24px}
+.ico{width:48px;height:48px;border-radius:14px;background:var(--soft);color:var(--primary);display:grid;place-items:center;font-family:"Noto Sans KR",sans-serif;font-weight:700;font-size:22px}
+.card h3{font-size:19px;margin:16px 0 8px}.card p{margin:0;color:var(--muted);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{padding:24px;border-radius:20px;background:var(--soft)}
+.step b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--primary);color:var(--on-primary);font-size:16px}
+.step h3{margin:14px 0 6px;font-size:19px}.step p{margin:0;color:var(--muted);font-size:15px}
+.situations{display:flex;flex-wrap:wrap;gap:10px;margin-top:-12px}
+.chip{background:var(--surface);border:1px solid var(--outline);border-radius:999px;padding:8px 16px;font-size:15px}
+.chip span{font-family:"Noto Sans KR",sans-serif;font-weight:700;margin-right:6px;color:var(--primary)}
+.privacy{background:var(--surface);border:1px solid var(--outline);border-radius:24px;padding:36px}
+.privacy h2{margin:0 0 8px;font-size:26px}.privacy>p{margin:0 0 16px;color:var(--muted)}
+details{border-top:1px solid var(--outline);padding-top:16px}
+summary{cursor:pointer;font-weight:600;color:var(--primary)}
+.policy h3{font-size:18px;margin:24px 0 6px}.policy p{margin:0;overflow-wrap:anywhere}.policy .eff{color:var(--muted);margin-top:12px}
+footer{border-top:1px solid var(--outline);padding:28px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer a{color:var(--muted)}footer .sp{margin-left:auto}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:44px;text-align:center;gap:8px}.hero .copy{padding-bottom:24px}.hero p.sub{margin-left:auto;margin-right:auto}
+.grid,.steps{grid-template-columns:1fr}nav.links{display:none}.lang{margin-left:auto}.privacy{padding:28px 22px}section{padding:56px 0}}
+@media (max-width:420px){.brand span{display:none}}
+</style>
 </head>
-<body><header><div class="wrap bar">
-<a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" width="36" height="36"><span>Korean Study</span></a>
-<nav class="links" aria-label="Sections"><a href="#features">Features</a><a href="#screenshots">Screenshots</a><a href="#privacy">Privacy</a></nav>
-<div class="lang" role="navigation" aria-label="Language"><a href="index.html" hreflang="en" lang="en" aria-current="true">English</a><a href="ko/index.html" hreflang="ko" lang="ko">한국어</a><a href="vi/index.html" hreflang="vi" lang="vi">Tiếng Việt</a></div>
+<body>
+<header><div class="wrap bar">
+  <a class="brand" href="#top"><div class="logo" aria-hidden="true">한</div><span>Korean Study</span></a>
+  <nav class="links" aria-label="Sections">
+    <a href="#features" data-i18n="nav_features"></a><a href="#situations" data-i18n="nav_situations"></a><a href="#privacy" data-i18n="nav_privacy"></a>
+  </nav>
+  <div class="lang" role="group" data-i18n-aria="lang_label">
+    <button type="button" data-lang="en" lang="en">English</button>
+    <button type="button" data-lang="ko" lang="ko">한국어</button>
+    <button type="button" data-lang="vi" lang="vi">Tiếng Việt</button>
+  </div>
 </div></header>
-<main>
-<section class="hero"><div class="wrap">
-<div>
-<span class="eyebrow">Korean for beginners</span>
-<h1>Learn Korean,<br>one small step a day</h1>
-<p class="sub">Start with Hangul, build your vocabulary, and practice real conversations — with explanations in English, Vietnamese, or easy Korean.</p>
-<span class="badge soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 2.2 13.4 12l-9.8 9.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z"/><path fill="#FBBC04" d="m16.8 8.6-3.4 3.4 3.4 3.4 3.8-2.2c.8-.5.8-1.7 0-2.2z"/><path fill="#4285F4" d="M3.6 2.2c.3-.2.8-.2 1.2 0l12 6.4-3.4 3.4z"/><path fill="#EA4335" d="M13.4 12l3.4 3.4-12 6.4c-.4.2-.9.2-1.2 0z"/></svg>Coming soon on Google Play</span>
-<p class="note">Android · No account needed · Works offline</p>
-</div>
-<div class="phone"><img src="assets/img/en/01-home.webp" alt="Home" width="540" height="1200"></div>
-</div></section>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div class="copy">
+    <span class="eyebrow" data-i18n="eyebrow"></span>
+    <h1 data-i18n-html="h1"></h1>
+    <p class="sub" data-i18n="sub"></p>
+    <span class="badge"><span class="tri" aria-hidden="true"></span><span data-i18n="badge"></span></span>
+    <p class="note" data-i18n="note"></p>
+  </div>
+  <div class="phone" aria-hidden="true">
+    <div class="hi">안녕하세요!</div>
+    <div class="hello" data-i18n="m_hello"></div>
+    <div class="m-hero">
+      <div class="u" data-i18n="m_unit"></div>
+      <div class="glyphs">ㄱㄴㄷㄹ</div>
+      <div class="m-track"><i></i></div>
+      <div class="m-btn" data-i18n="m_continue"></div>
+    </div>
+    <div class="m-card"><div class="m-goal"><span style="color:inherit;font-weight:700" data-i18n="m_goal"></span><span>6 / 10</span></div><div class="m-bar"><i></i></div></div>
+    <div class="m-card"><span class="m-sub" data-i18n="m_phrase"></span><p class="m-ko">감사합니다.</p><span class="m-sub" data-i18n="m_thanks"></span></div>
+  </div>
+</div></div>
 
 <section id="features"><div class="wrap">
-<h2>Everything a beginner needs</h2>
-<div class="grid"><article class="card"><div class="ico" aria-hidden="true">✍️</div><h3>Hangul, stroke by stroke</h3><p>Six step-by-step units take you from consonants and vowels to syllable blocks, compound vowels, tense consonants, and final consonants. Watch the stroke order, then trace each letter yourself.</p></article><article class="card"><div class="ico" aria-hidden="true">📖</div><h3>Words with real examples</h3><p>Learn everyday words in themed lessons — greetings, numbers, food, prices, family, places, and time. Every word comes with an example sentence you can listen to.</p></article><article class="card"><div class="ico" aria-hidden="true">💬</div><h3>Phrases for real situations</h3><p>Ten situations, from ordering at a café and asking for directions to checking in at a hotel or visiting a pharmacy. Practice with short role-play conversations.</p></article><article class="card"><div class="ico" aria-hidden="true">🔁</div><h3>Review what you missed</h3><p>Words you get wrong in quizzes go to your review list automatically, so you can practice them again.</p></article><article class="card"><div class="ico" aria-hidden="true">🌏</div><h3>Explanations in your language</h3><p>Choose English, Vietnamese, or easy Korean for meanings and explanations. Switch anytime in Settings.</p></article><article class="card"><div class="ico" aria-hidden="true">🎯</div><h3>Study at your own pace</h3><p>Set a daily goal, keep your streak, and see your progress. Skip units you already know with a short test.</p></article></div>
+  <h2 data-i18n="features_title"></h2>
+  <div class="grid">
+    <div class="card"><div class="ico" aria-hidden="true">ㄱ</div><h3 data-i18n="f1_t"></h3><p data-i18n="f1_d"></p></div>
+    <div class="card"><div class="ico" aria-hidden="true">가</div><h3 data-i18n="f2_t"></h3><p data-i18n="f2_d"></p></div>
+    <div class="card"><div class="ico" aria-hidden="true">말</div><h3 data-i18n="f3_t"></h3><p data-i18n="f3_d"></p></div>
+    <div class="card"><div class="ico" aria-hidden="true">↻</div><h3 data-i18n="f4_t"></h3><p data-i18n="f4_d"></p></div>
+    <div class="card"><div class="ico" aria-hidden="true">A</div><h3 data-i18n="f5_t"></h3><p data-i18n="f5_d"></p></div>
+    <div class="card"><div class="ico" aria-hidden="true">★</div><h3 data-i18n="f6_t"></h3><p data-i18n="f6_d"></p></div>
+  </div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
-<h2>How it works</h2>
-<div class="steps"><div class="step"><b>1</b><h3>Learn</h3><p>Open a unit and go through letters or word cards with audio.</p></div><div class="step"><b>2</b><h3>Practice</h3><p>Trace letters, take a short quiz, and try role-play conversations.</p></div><div class="step"><b>3</b><h3>Review</h3><p>Revisit missed words and check your study time every day.</p></div></div>
+  <h2 data-i18n="steps_title"></h2>
+  <div class="steps">
+    <div class="step"><b>1</b><h3 data-i18n="s1_t"></h3><p data-i18n="s1_d"></p></div>
+    <div class="step"><b>2</b><h3 data-i18n="s2_t"></h3><p data-i18n="s2_d"></p></div>
+    <div class="step"><b>3</b><h3 data-i18n="s3_t"></h3><p data-i18n="s3_d"></p></div>
+  </div>
 </div></section>
 
-<section id="screenshots" style="padding-top:0"><div class="wrap">
-<h2>Take a look</h2>
-<div class="shots"><figure><img src="assets/img/en/01-home.webp" alt="Home" width="540" height="1200" loading="lazy"><figcaption>Home</figcaption></figure><figure><img src="assets/img/en/02-path.webp" alt="Learning path" width="540" height="1200" loading="lazy"><figcaption>Learning path</figcaption></figure><figure><img src="assets/img/en/03-hangul.webp" alt="Hangul" width="540" height="1200" loading="lazy"><figcaption>Hangul</figcaption></figure><figure><img src="assets/img/en/04-words.webp" alt="Word lesson" width="540" height="1200" loading="lazy"><figcaption>Word lesson</figcaption></figure><figure><img src="assets/img/en/05-review.webp" alt="Review" width="540" height="1200" loading="lazy"><figcaption>Review</figcaption></figure><figure><img src="assets/img/en/06-phrases.webp" alt="Situation phrases" width="540" height="1200" loading="lazy"><figcaption>Situation phrases</figcaption></figure><figure><img src="assets/img/en/07-roleplay.webp" alt="Restaurant role-play" width="540" height="1200" loading="lazy"><figcaption>Restaurant role-play</figcaption></figure><figure><img src="assets/img/en/08-profile.webp" alt="Profile" width="540" height="1200" loading="lazy"><figcaption>Profile</figcaption></figure></div>
+<section id="situations" style="padding-top:0"><div class="wrap">
+  <h2 data-i18n="sit_title"></h2>
+  <div class="situations" id="sit-list"></div>
 </div></section>
 
 <section id="privacy" style="padding-top:0"><div class="wrap">
-<div class="privacy"><div class="shield" aria-hidden="true">🔒</div><div>
-<h2>Your learning stays on your device</h2>
-<p>Korean Study has no accounts, no ads, and no tracking. The app doesn&#x27;t connect to the internet — your progress and settings are stored only on your phone.</p>
-<a href="privacy.html">Read the privacy policy →</a>
-</div></div>
+  <div class="privacy">
+    <h2 data-i18n="privacy_title"></h2>
+    <p data-i18n="privacy_body"></p>
+    <details id="policy">
+      <summary data-i18n="policy_open"></summary>
+      <div class="policy" id="policy-body"></div>
+    </details>
+  </div>
 </div></section>
 </main>
+
 <footer><div class="wrap">
-<span>© 2026 Korean Study</span>
-<span class="sp">Android</span>
+  <span>© 2026 Korean Study</span>
+  <a href="#policy" id="footer-policy" data-i18n="footer_privacy"></a>
+  <a href="mailto:contact@example.com" data-i18n="footer_contact"></a>
+  <span class="sp" data-i18n="footer_made"></span>
 </div></footer>
+
+<script>
+const CONTACT = "contact@example.com";
+const EFFECTIVE = "2026-10-29";
+const T = {
+en: {
+  title: "Korean Study — Learn Korean from Hangul to everyday conversation",
+  description: "Learn Hangul with stroke-order tracing, build everyday vocabulary, and practice real conversations. Explanations in English, Vietnamese, or easy Korean.",
+  nav_features: "Features", nav_situations: "Situations", nav_privacy: "Privacy", lang_label: "Language",
+  eyebrow: "Korean for beginners",
+  h1: "Learn Korean,<br>one small step a day",
+  sub: "Start with Hangul, build your vocabulary, and practice real conversations — with explanations in English, Vietnamese, or easy Korean.",
+  badge: "Coming soon on Google Play",
+  note: "Android · No account needed · Lessons work offline",
+  m_hello: "Hello! Ready for today's session?", m_unit: "Unit 1 · Consonants", m_continue: "Continue", m_goal: "Today's goal",
+  m_phrase: "Phrase of the day", m_thanks: "Thank you.",
+  features_title: "Everything a beginner needs",
+  f1_t: "Hangul, stroke by stroke", f1_d: "Six step-by-step units take you from consonants and vowels to syllable blocks, compound vowels, tense consonants, and final consonants. Watch the stroke order, then trace each letter yourself.",
+  f2_t: "Words with real examples", f2_d: "Learn everyday words in themed lessons — greetings, numbers, food, prices, family, places, and time. Every word comes with an example sentence you can listen to.",
+  f3_t: "Phrases for real situations", f3_d: "Ten situations, from ordering at a café and asking for directions to checking in at a hotel or visiting a pharmacy. Practice with short role-play conversations.",
+  f4_t: "Review what you missed", f4_d: "Words you get wrong in quizzes go to your review list automatically, so you can practice them again. Save any word or phrase to your wordbook.",
+  f5_t: "Explanations in your language", f5_d: "Choose English, Vietnamese, or easy Korean for meanings and explanations. Switch anytime in Settings.",
+  f6_t: "Study at your own pace", f6_d: "Set a daily goal, keep your streak, and see your progress. Skip units you already know with a short test.",
+  steps_title: "How it works",
+  s1_t: "Learn", s1_d: "Open a unit and go through letters or word cards with audio.",
+  s2_t: "Practice", s2_d: "Trace letters, take a short quiz, and try role-play conversations.",
+  s3_t: "Review", s3_d: "Revisit missed words and check your study time every day.",
+  sit_title: "Ten everyday situations",
+  sits: ["Restaurant","Café","Taxi","Subway","Shopping","Asking directions","Pharmacy","Hotel","Introducing yourself","Asking for help"],
+  privacy_title: "Your learning stays on your device",
+  privacy_body: "No account, no sign-up. Your progress and settings are stored only on your phone. The app shows ads through Google AdMob, which uses the internet; where the law requires it, the app asks for your consent first.",
+  policy_open: "Read the full privacy policy",
+  footer_privacy: "Privacy policy", footer_contact: "Contact", footer_made: "Made for Korean learners everywhere",
+  policy: {
+    title: "Privacy Policy", effective: "Effective date: {date}",
+    intro: "This privacy policy explains how the Korean Study app (“the app”) handles information.",
+    sections: [
+      ["Information we collect", "The app does not ask for your name, email, or any account. We, the developer, do not receive your learning records or other personal information."],
+      ["Data stored on your device", "To save your learning, the app stores the following only on your device: lesson and quiz progress, your review list and saved words, study time, and your settings (such as explanation language, daily goal, and reminder time)."],
+      ["Advertising", "The app shows ads through Google AdMob. To show ads, limit how often they appear, measure them, and prevent fraud, Google may collect and use information from your device, such as the advertising ID, IP address, and how you interact with ads. Ads are limited to content suitable for general audiences. Learn how Google uses this information at https://policies.google.com/technologies/partner-sites."],
+      ["Your consent and choices", "In regions where consent is required (such as the European Economic Area, the United Kingdom, and Switzerland), the app shows Google's consent form before personalized ads are used. You can change your choice at any time in Settings → Privacy options. You can also reset or delete your advertising ID in your Android settings."],
+      ["Internet access", "The app uses the internet only to load ads. Lessons, quizzes, and review work without a connection, and the app does not send your learning records over the network."],
+      ["Device backup", "If backup is turned on in your Android settings, Android may include the app's data in your device backup. This backup is managed by Google under your account and settings, not by us."],
+      ["Notifications", "If you turn on daily reminders, the app schedules a notification on your device. Reminders are off by default, and you can turn them off at any time."],
+      ["Text-to-speech", "Audio is played with the text-to-speech engine installed on your device. The app does not send the spoken text anywhere."],
+      ["Children", "The app is suitable for learners of all ages. We do not knowingly collect personal information from children."],
+      ["Deleting your data", "You can delete all app data by clearing the app's storage in your device settings or by uninstalling the app."],
+      ["Changes to this policy", "If this policy changes, we will update this page and the effective date above."],
+      ["Contact", "If you have questions about this policy, contact us at {email}."]
+    ]
+  }
+},
+ko: {
+  title: "Korean Study — 한글부터 생활 회화까지 배우는 한국어",
+  description: "획순 따라쓰기로 한글을 익히고, 생활 단어와 실제 회화를 연습하세요. 설명은 영어, 베트남어, 쉬운 한국어 중에서 고를 수 있어요.",
+  nav_features: "기능", nav_situations: "상황별 회화", nav_privacy: "개인정보", lang_label: "언어",
+  eyebrow: "처음 배우는 한국어",
+  h1: "하루 한 걸음,<br>한국어를 시작하세요",
+  sub: "한글부터 단어, 실제 회화까지. 설명은 영어, 베트남어, 쉬운 한국어 중에서 고를 수 있어요.",
+  badge: "Google Play 출시 예정",
+  note: "Android · 회원가입 없음 · 학습은 인터넷 없이도 가능",
+  m_hello: "오늘도 같이 공부해 볼까요?", m_unit: "1단원 · 자음", m_continue: "이어서 하기", m_goal: "오늘의 목표",
+  m_phrase: "오늘의 표현", m_thanks: "고마운 마음을 전할 때 써요.",
+  features_title: "처음 배우는 사람에게 필요한 모든 것",
+  f1_t: "획순까지 배우는 한글", f1_d: "자음과 모음부터 글자 만들기, 이중 모음, 된소리, 받침까지 6단원으로 차근차근 배워요. 쓰는 순서를 보고 직접 따라 써 보세요.",
+  f2_t: "예문과 함께 배우는 단어", f2_d: "인사, 숫자, 음식, 가격, 가족, 장소, 시간 등 주제별 레슨으로 생활 단어를 배워요. 모든 단어에 소리로 들을 수 있는 예문이 있어요.",
+  f3_t: "실제 상황에서 쓰는 문장", f3_d: "카페 주문부터 길 묻기, 호텔 체크인, 약국까지 10가지 상황. 짧은 역할 연습으로 대화를 연습해요.",
+  f4_t: "틀린 단어는 다시 복습", f4_d: "퀴즈에서 틀린 단어는 복습 목록에 자동으로 들어가 다시 연습할 수 있어요. 단어와 문장은 단어장에 저장할 수 있어요.",
+  f5_t: "내 언어로 보는 설명", f5_d: "뜻과 설명을 영어, 베트남어, 쉬운 한국어 중에서 골라 보세요. 설정에서 언제든 바꿀 수 있어요.",
+  f6_t: "내 속도에 맞춘 학습", f6_d: "하루 목표를 정하고 연속 학습일과 진도를 확인하세요. 이미 아는 단원은 짧은 테스트로 건너뛸 수 있어요.",
+  steps_title: "이렇게 배워요",
+  s1_t: "배우기", s1_d: "단원을 열고 글자나 단어 카드를 소리와 함께 익혀요.",
+  s2_t: "연습하기", s2_d: "글자를 따라 쓰고, 짧은 퀴즈를 풀고, 역할 연습으로 대화해 봐요.",
+  s3_t: "복습하기", s3_d: "틀린 단어를 다시 보고, 매일 공부한 시간을 확인해요.",
+  sit_title: "생활 속 10가지 상황",
+  sits: ["식당","카페","택시","지하철","쇼핑","길 묻기","약국","호텔","자기소개","도움 요청"],
+  privacy_title: "학습 기록은 내 휴대폰에만",
+  privacy_body: "회원가입이 없어요. 학습 기록과 설정은 휴대폰에만 저장돼요. 앱은 Google AdMob 광고를 보여 주며 광고를 받을 때 인터넷을 사용해요. 법으로 동의가 필요한 지역에서는 먼저 동의를 물어요.",
+  policy_open: "개인정보처리방침 전체 보기",
+  footer_privacy: "개인정보처리방침", footer_contact: "문의", footer_made: "한국어를 배우는 모든 사람을 위해",
+  policy: {
+    title: "개인정보처리방침", effective: "시행일: {date}",
+    intro: "이 개인정보처리방침은 Korean Study 앱(이하 “앱”)이 정보를 어떻게 다루는지 설명합니다.",
+    sections: [
+      ["수집하는 정보", "앱은 이름, 이메일, 계정을 요구하지 않습니다. 개발자는 사용자의 학습 기록이나 그 밖의 개인정보를 받지 않습니다."],
+      ["기기에 저장되는 정보", "학습 내용을 저장하기 위해 앱은 다음 정보를 기기에만 저장합니다: 레슨과 퀴즈 진도, 복습 목록과 저장한 단어, 공부한 시간, 설정(설명 언어, 하루 목표, 알림 시간 등)."],
+      ["광고", "앱은 Google AdMob으로 광고를 보여 줍니다. 광고를 보여 주고, 노출 횟수를 조절하고, 성과를 측정하고, 부정 행위를 막기 위해 Google은 광고 ID, IP 주소, 광고와의 상호작용 같은 기기 정보를 수집하고 사용할 수 있습니다. 광고는 모든 연령에 적합한 콘텐츠로 제한합니다. Google이 이 정보를 사용하는 방식은 https://policies.google.com/technologies/partner-sites 에서 볼 수 있습니다."],
+      ["동의와 선택", "동의가 필요한 지역(유럽 경제 지역, 영국, 스위스 등)에서는 맞춤 광고를 쓰기 전에 Google 동의 창을 보여 줍니다. 선택은 언제든 설정 → 개인정보 옵션에서 바꿀 수 있습니다. Android 설정에서 광고 ID를 재설정하거나 삭제할 수도 있습니다."],
+      ["인터넷 사용", "앱은 광고를 받을 때만 인터넷을 사용합니다. 레슨, 퀴즈, 복습은 인터넷 없이도 쓸 수 있으며, 앱은 학습 기록을 네트워크로 보내지 않습니다."],
+      ["기기 백업", "Android 설정에서 백업이 켜져 있으면 Android가 앱 데이터를 기기 백업에 포함할 수 있습니다. 이 백업은 사용자의 Google 계정과 설정에 따라 Google이 관리하며 개발자가 관리하지 않습니다."],
+      ["알림", "매일 알림을 켜면 앱이 기기에서 알림을 예약합니다. 알림은 처음에 꺼져 있으며 언제든 끌 수 있습니다."],
+      ["음성 읽기", "소리는 기기에 설치된 음성 합성(TTS) 엔진으로 재생합니다. 앱은 읽는 문장을 어디에도 보내지 않습니다."],
+      ["어린이", "앱은 모든 연령의 학습자가 사용할 수 있습니다. 개발자는 어린이의 개인정보를 의도적으로 수집하지 않습니다."],
+      ["데이터 삭제", "기기 설정에서 앱 저장공간을 지우거나 앱을 삭제하면 모든 앱 데이터가 삭제됩니다."],
+      ["방침의 변경", "이 방침이 바뀌면 이 페이지와 위의 시행일을 고칩니다."],
+      ["문의", "이 방침에 대해 궁금한 점은 다음 주소로 문의해 주세요: {email}"]
+    ]
+  }
+},
+vi: {
+  title: "Korean Study — Học tiếng Hàn từ Hangul đến hội thoại hằng ngày",
+  description: "Học Hangul qua tập viết theo thứ tự nét, học từ vựng thường ngày và luyện hội thoại thực tế. Giải thích bằng tiếng Việt, tiếng Anh hoặc tiếng Hàn đơn giản.",
+  nav_features: "Tính năng", nav_situations: "Tình huống", nav_privacy: "Quyền riêng tư", lang_label: "Ngôn ngữ",
+  eyebrow: "Tiếng Hàn cho người mới bắt đầu",
+  h1: "Học tiếng Hàn,<br>mỗi ngày một bước nhỏ",
+  sub: "Bắt đầu từ bảng chữ Hangul, học từ vựng và luyện hội thoại thực tế — với phần giải thích bằng tiếng Việt, tiếng Anh hoặc tiếng Hàn đơn giản.",
+  badge: "Sắp có trên Google Play",
+  note: "Android · Không cần tài khoản · Học được cả khi không có mạng",
+  m_hello: "Xin chào! Sẵn sàng học hôm nay chưa?", m_unit: "Bài 1 · Phụ âm", m_continue: "Học tiếp", m_goal: "Mục tiêu hôm nay",
+  m_phrase: "Câu nói hôm nay", m_thanks: "Cảm ơn.",
+  features_title: "Mọi thứ người mới bắt đầu cần",
+  f1_t: "Hangul theo từng nét", f1_d: "Sáu bài học từng bước: phụ âm, nguyên âm, ghép âm tiết, nguyên âm ghép, phụ âm căng và phụ âm cuối. Xem thứ tự viết nét rồi tự tập viết từng chữ.",
+  f2_t: "Từ vựng kèm câu ví dụ", f2_d: "Học từ vựng thường ngày theo chủ đề — chào hỏi, số đếm, đồ ăn, giá cả, gia đình, địa điểm và thời gian. Mỗi từ đều có câu ví dụ để nghe phát âm.",
+  f3_t: "Mẫu câu cho tình huống thật", f3_d: "Mười tình huống, từ gọi đồ ở quán cà phê, hỏi đường, nhận phòng khách sạn đến hiệu thuốc. Luyện tập qua những đoạn hội thoại nhập vai ngắn.",
+  f4_t: "Ôn lại từ trả lời sai", f4_d: "Những từ bạn trả lời sai trong bài kiểm tra sẽ tự động được thêm vào mục Ôn tập để luyện lại. Bạn có thể lưu từ và câu vào sổ từ vựng.",
+  f5_t: "Giải thích bằng ngôn ngữ của bạn", f5_d: "Chọn tiếng Việt, tiếng Anh hoặc tiếng Hàn đơn giản cho phần nghĩa và giải thích. Có thể đổi bất cứ lúc nào trong Cài đặt.",
+  f6_t: "Học theo tốc độ của bạn", f6_d: "Đặt mục tiêu mỗi ngày, giữ chuỗi ngày học và xem tiến độ. Bài nào đã biết có thể bỏ qua bằng một bài kiểm tra ngắn.",
+  steps_title: "Cách học",
+  s1_t: "Học", s1_d: "Mở một bài và học chữ hoặc thẻ từ vựng kèm phát âm.",
+  s2_t: "Luyện tập", s2_d: "Tập viết chữ, làm bài kiểm tra ngắn và thử hội thoại nhập vai.",
+  s3_t: "Ôn tập", s3_d: "Xem lại từ trả lời sai và theo dõi thời gian học mỗi ngày.",
+  sit_title: "Mười tình huống thường ngày",
+  sits: ["Nhà hàng","Quán cà phê","Taxi","Tàu điện ngầm","Mua sắm","Hỏi đường","Hiệu thuốc","Khách sạn","Giới thiệu bản thân","Nhờ giúp đỡ"],
+  privacy_title: "Dữ liệu học tập chỉ ở trên điện thoại của bạn",
+  privacy_body: "Không cần tài khoản hay đăng ký. Tiến độ và cài đặt chỉ được lưu trên điện thoại của bạn. Ứng dụng hiển thị quảng cáo qua Google AdMob và dùng internet để tải quảng cáo; ở những nơi pháp luật yêu cầu, ứng dụng sẽ hỏi ý kiến đồng ý của bạn trước.",
+  policy_open: "Xem toàn bộ chính sách quyền riêng tư",
+  footer_privacy: "Chính sách quyền riêng tư", footer_contact: "Liên hệ", footer_made: "Dành cho mọi người học tiếng Hàn",
+  policy: {
+    title: "Chính sách quyền riêng tư", effective: "Ngày có hiệu lực: {date}",
+    intro: "Chính sách này giải thích cách ứng dụng Korean Study (“ứng dụng”) xử lý thông tin.",
+    sections: [
+      ["Thông tin chúng tôi thu thập", "Ứng dụng không yêu cầu tên, email hay tài khoản. Chúng tôi (nhà phát triển) không nhận dữ liệu học tập hay bất kỳ thông tin cá nhân nào khác của bạn."],
+      ["Dữ liệu lưu trên thiết bị", "Để lưu quá trình học, ứng dụng chỉ lưu các thông tin sau trên thiết bị của bạn: tiến độ bài học và bài kiểm tra, danh sách ôn tập và từ đã lưu, thời gian học, và cài đặt (như ngôn ngữ giải thích, mục tiêu mỗi ngày, giờ nhắc)."],
+      ["Quảng cáo", "Ứng dụng hiển thị quảng cáo qua Google AdMob. Để hiển thị quảng cáo, giới hạn số lần xuất hiện, đo lường hiệu quả và ngăn gian lận, Google có thể thu thập và sử dụng thông tin từ thiết bị như mã nhận dạng quảng cáo, địa chỉ IP và cách bạn tương tác với quảng cáo. Quảng cáo được giới hạn ở nội dung phù hợp với mọi lứa tuổi. Xem cách Google sử dụng thông tin này tại https://policies.google.com/technologies/partner-sites."],
+      ["Sự đồng ý và lựa chọn của bạn", "Ở những khu vực cần sự đồng ý (như Khu vực Kinh tế Châu Âu, Vương quốc Anh và Thụy Sĩ), ứng dụng hiển thị biểu mẫu đồng ý của Google trước khi dùng quảng cáo cá nhân hóa. Bạn có thể thay đổi lựa chọn bất cứ lúc nào trong Cài đặt → Tùy chọn quyền riêng tư. Bạn cũng có thể đặt lại hoặc xóa mã nhận dạng quảng cáo trong cài đặt Android."],
+      ["Truy cập internet", "Ứng dụng chỉ dùng internet để tải quảng cáo. Bài học, bài kiểm tra và ôn tập vẫn dùng được khi không có mạng, và ứng dụng không gửi dữ liệu học tập của bạn qua mạng."],
+      ["Sao lưu thiết bị", "Nếu bạn bật sao lưu trong cài đặt Android, Android có thể đưa dữ liệu của ứng dụng vào bản sao lưu thiết bị. Bản sao lưu này do Google quản lý theo tài khoản và cài đặt của bạn, không phải do chúng tôi."],
+      ["Thông báo", "Nếu bạn bật nhắc học mỗi ngày, ứng dụng sẽ đặt lịch thông báo trên thiết bị. Nhắc nhở mặc định đang tắt và bạn có thể tắt bất cứ lúc nào."],
+      ["Đọc thành tiếng", "Âm thanh được phát bằng công cụ chuyển văn bản thành giọng nói (TTS) có sẵn trên thiết bị. Ứng dụng không gửi nội dung được đọc đi đâu cả."],
+      ["Trẻ em", "Ứng dụng phù hợp với người học ở mọi lứa tuổi. Chúng tôi không cố ý thu thập thông tin cá nhân của trẻ em."],
+      ["Xóa dữ liệu", "Bạn có thể xóa toàn bộ dữ liệu bằng cách xóa bộ nhớ của ứng dụng trong cài đặt thiết bị hoặc gỡ cài đặt ứng dụng."],
+      ["Thay đổi chính sách", "Nếu chính sách thay đổi, chúng tôi sẽ cập nhật trang này và ngày có hiệu lực ở trên."],
+      ["Liên hệ", "Nếu có câu hỏi về chính sách này, vui lòng liên hệ {email}."]
+    ]
+  }
+}};
+const SIT_KO = ["식당","카페","택시","지하철","쇼핑","길","약국","호텔","소개","도움"];
+
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function linkify(s){
+  return esc(s)
+    .replace(/https:\/\/[^\s]+?(?=[.]?(\s|$))/g,u=>`<a href="${u}" rel="noopener">${u}</a>`)
+    .replace("{email}",`<a href="mailto:${CONTACT}">${CONTACT}</a>`);
+}
+
+function pickLang(){
+  const q=new URLSearchParams(location.search).get("lang");
+  if(T[q])return q;
+  try{const saved=localStorage.getItem("ks-lang");if(T[saved])return saved;}catch(e){}
+  for(const l of (navigator.languages||[navigator.language||"en"])){
+    const base=String(l).toLowerCase().split("-")[0];
+    if(T[base])return base;
+  }
+  return "en";
+}
+
+function apply(lang){
+  const t=T[lang];
+  document.documentElement.lang=lang;
+  document.title=t.title;
+  document.querySelector('meta[name="description"]').content=t.description;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=t[el.dataset.i18n];});
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{el.innerHTML=t[el.dataset.i18nHtml];});
+  document.querySelectorAll("[data-i18n-aria]").forEach(el=>{el.setAttribute("aria-label",t[el.dataset.i18nAria]);});
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
+  document.getElementById("sit-list").innerHTML=t.sits.map((s,i)=>
+    lang==="ko"?`<span class="chip">${esc(s)}</span>`:`<span class="chip"><span lang="ko">${SIT_KO[i]}</span>${esc(s)}</span>`).join("");
+  const p=t.policy;
+  document.getElementById("policy-body").innerHTML=
+    `<p class="eff">${esc(p.effective.replace("{date}",EFFECTIVE))}</p><p>${esc(p.intro)}</p>`+
+    p.sections.map(([h,b])=>`<h3>${esc(h)}</h3><p>${linkify(b)}</p>`).join("");
+}
+
+let current=pickLang();
+apply(current);
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>{
+  current=b.dataset.lang; apply(current);
+  try{localStorage.setItem("ks-lang",current);}catch(e){}
+  const u=new URL(location.href);u.searchParams.set("lang",current);history.replaceState(null,"",u);
+}));
+function openPolicyIfHash(){if(location.hash==="#policy"){document.getElementById("policy").open=true;}}
+document.getElementById("footer-policy").addEventListener("click",()=>{document.getElementById("policy").open=true;});
+window.addEventListener("hashchange",openPolicyIfHash);openPolicyIfHash();
+</script>
 </body>
 </html>
